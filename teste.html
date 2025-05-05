@@ -1,32 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+
+<body onload="current_location('location')">
     <main>
         <section>
             <form>
-                <input type="text" id="name" name="campo_name" placeholder="Digite o seu nome" required>
-                <br><br>
-                <input type="text" id="gym" name="campo_gym" placeholder="Digite aqui o nome da sua academia" required>
-                <br><br>
-                <input type="email" id="email" name="campo_email" placeholder="Digite aqui o seu email" required>
-                <br><br>
+                <input autocomplete="off" onblur="empty_alert('alert_name','name')" onfocus="forms_orange(id)"
+                    type="text" id="name" name="campo_name" placeholder="Digite o seu nome" required>
+                <div id="alert_name"></div>
+                <br>
+
+                <input autocomplete="off" onblur="empty_alert('alert_gym','gym')" onfocus="forms_orange(id)" type="text"
+                    id="gym" name="campo_gym" placeholder="Digite o nome da academia" required>
+                <div id="alert_gym"></div>
+                <br>
+
+                <input autocomplete="off" onblur="empty_alert('alert_email','email')" onfocus="forms_orange(id)"
+                    type="email" id="email" name="campo_email" placeholder="Digite aqui o seu email" required>
+                <div id="alert_email"></div>
+                <br>
 
                 <select name="ddd">
                     <option value="Portugal"><img src="img/dumbbell.png" width="30">Portugal +351</option>
                     <option value="Brasil">Brasil +55</option>
                 </select>
-                <input type="text" id="telephone" name="campo_telephone" placeholder="Digite aqui o seu telefone" required>
-                <br><br>
-                <input type="password" id="campo_password" placeholder="Digite a sua senha" required>
-                <br><br>
+                <input autocomplete="off" onblur="empty_alert('alert_telephone','telephone')" onfocus="forms_orange(id)"
+                    type="text" id="telephone" name="campo_telephone" placeholder="Digite aqui o seu telefone" required>
+                <div id="alert_telephone"></div>
+                <br>
+
+                <div id="campo_location_ext"><input autocomplete="off" onfocus="" type="text" id="location" name="campo_location"
+                        placeholder="Localização da sua loja" required></div>
+                <br>
+
+                <input autocomplete="off" onblur="empty_alert('alert_password','password')" onfocus="forms_orange(id)"
+                    type="password" id="password" name="campo_password" placeholder="Digite a sua senha" required>
+                <div id="alert_password"></div>
+                <br>
+
                 <input type="submit" value="Experimente grátis">
             </form>
         </section>
     </main>
+    <script src="js/index.js"></script>
 </body>
+
 </html>
